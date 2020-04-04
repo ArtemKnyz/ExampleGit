@@ -40,5 +40,4 @@ public class ShortLong {
         System.out.println("самое короткое число и его разрядность = " + m + " " + shortNumber);
         System.out.println("самое длинное число и его разрядность  = " + n + " " + longNumber);
     }
-
 }
