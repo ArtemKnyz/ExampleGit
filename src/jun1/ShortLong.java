@@ -31,7 +31,8 @@ public class ShortLong {
             if (shortNumber > str(count[i])) {
                 shortNumber = str(count[i]);
                 m = count[i];
-            } else if (longNumber < str(count[i])) {
+            } 
+            if (longNumber < str(count[i])) {
                 longNumber = str(count[i]);
                 n = count[i];
             }
