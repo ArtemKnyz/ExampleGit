@@ -20,6 +20,7 @@ class Jun1 {
         int shortNumber = Integer.MAX_VALUE;  //самая коротая разрядность числа
         int longNumber = 0; // самая длинная разрядность числа
         int[] m = {0, 0, 0, 0};
+        
         for (int i = 0; i < count.length - 1; i++) {
             shortNumber = (shortNumber > str(count[i])) ? str(count[i]) : shortNumber;
             if (shortNumber > str(count[i])) {
