@@ -18,7 +18,7 @@ class Jun1 {
         sh.Array();  //наполняем массив вводимыми числами
         sh.number(); //ищем короткое и длинное число и их разрядность
         sh.gag();
-       // sh.sort(sh.ss);
+        sh.sort(new ShortLong().ss);
         // Arrays.sort(sh.ss);
         
     }
