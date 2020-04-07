@@ -1,16 +1,19 @@
 package jun1;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
+import javafx.animation.KeyValue;
 import static jun1.Jun1.*;
 
 public class ShortLong {
 
-   static Jun1 ju = new Jun1();
+    static Jun1 ju = new Jun1();
     static int[] count;
-    
-           
+    //static int[] ss;
+
     static void Array() {                            //заполняем массив числами
-        count = new int[ju.number];
+        count = new int[number];
         for (int i = 0; i < number; i++) {
             System.out.println("input count " + i + ":");
             count[i] = new Scanner(System.in).nextInt();
@@ -25,13 +28,15 @@ public class ShortLong {
     static int longNumber = 0; // самая длинная разрядность числа
     static int m = 0, n = 0;    // соответсвенно короткое и длинное число
 
+    static int[] greater = new int[ju.number];
+
     static void number() {
-       // Jun1.t = 10;
+        // Jun1.t = 10;
         for (int i = 0; i <= count.length - 1; i++) {
             if (shortNumber > str(count[i])) {
                 shortNumber = str(count[i]);
                 m = count[i];
-            } 
+            }
             if (longNumber < str(count[i])) {
                 longNumber = str(count[i]);
                 n = count[i];
@@ -40,4 +45,34 @@ public class ShortLong {
         System.out.println("самое короткое число и его разрядность = " + m + " " + shortNumber);
         System.out.println("самое длинное число и его разрядность  = " + n + " " + longNumber);
     }
+
+    void gag() {
+        shortNumber = Integer.MAX_VALUE;
+        int[]ss = new int[number];
+        for (int j = 0; j < count.length; j++) {
+            ss[j] = count[j];
+            M:
+            for (int i = 1; i <= count.length-1 ; i++) {
+                if ((str(count[i]) < str(ss[j]))) {
+                    if ((count[i]) == ss[j]) continue;
+                    shortNumber = str(count[i]);
+                    m = ss[j];
+                    ss[j] = count[i];
+                    count[i] = m;
+                }
+            }
+        }
+        System.out.println("числа по возрастанию: " + Arrays.toString(ss));
+    }
+
+
+//public static void sort(int[]array) {
+//        for (int i = 0; i < array.length; i++) {
+//            int tmp = array[i];
+//            array[i] = array[array.length - i - 1];
+//            array[array.length - i - 1] = tmp;
+//        }
+//        
+//        // System.out.println(Arrays.toString(Arrays.sort(array)));
+//    }
 }

@@ -1,5 +1,6 @@
 package jun1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 class Jun1 {
@@ -16,6 +17,9 @@ class Jun1 {
 
         sh.Array();  //наполняем массив вводимыми числами
         sh.number(); //ищем короткое и длинное число и их разрядность
-
+        sh.gag();
+       // sh.sort(sh.ss);
+        // Arrays.sort(sh.ss);
+        
     }
 }
