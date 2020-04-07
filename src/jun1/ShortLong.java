@@ -10,7 +10,7 @@ public class ShortLong {
 
     static Jun1 ju = new Jun1();
     static int[] count;
-    //static int[] ss;
+    static int[]ss;
 
     static void Array() {                            //заполняем массив числами
         count = new int[number];
@@ -48,11 +48,11 @@ public class ShortLong {
 
     void gag() {
         shortNumber = Integer.MAX_VALUE;
-        int[]ss = new int[number];
+        ss = new int[number];
         for (int j = 0; j < count.length; j++) {
             ss[j] = count[j];
             M:
-            for (int i = 1; i <= count.length-1 ; i++) {
+            for (int i = j+1; i <= count.length-1 ; i++) {
                 if ((str(count[i]) < str(ss[j]))) {
                     if ((count[i]) == ss[j]) continue;
                     shortNumber = str(count[i]);
@@ -66,13 +66,13 @@ public class ShortLong {
     }
 
 
-//public static void sort(int[]array) {
-//        for (int i = 0; i < array.length; i++) {
-//            int tmp = array[i];
-//            array[i] = array[array.length - i - 1];
-//            array[array.length - i - 1] = tmp;
-//        }
-//        
-//        // System.out.println(Arrays.toString(Arrays.sort(array)));
-//    }
+public  void sort(int[]array) {                       //сортируем в обратном порядке
+        for (int i = 0; i < array.length/2; i++) {
+            int tmp = array[i];
+            array[i] = array[array.length - i - 1];
+            array[array.length - i - 1] = tmp;
+        }
+        
+         System.out.println("числа по убыванию: "+Arrays.toString(array));
+    }
 }
